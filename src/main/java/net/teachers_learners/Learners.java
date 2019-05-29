@@ -12,11 +12,7 @@ public class Learners {
          this.emailAddress = emailAddress;
     }
 
-//    String attended(){
-//        return attended();
-//    }
-
-    String getFirstName(){
+    String getFirstName( String subject ){
 
         return firstName;
     }
