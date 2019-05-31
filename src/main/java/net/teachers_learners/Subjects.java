@@ -2,7 +2,7 @@ package net.teachers_learners;
 
 public enum Subjects{
 
-    Mathematics( "Mathematica"),
+    Mathematics("Mathematica"),
     LifeSciences("LifeSciences"),
     Geography("Geography"),
     ConsumerStudies("ConsumerStudies"),
@@ -12,7 +12,7 @@ public enum Subjects{
 
     private final String subject;
 
-     Subjects (String subject){
+       Subjects( String subject ){
          this.subject = subject;
      }
      public String getSubject(){

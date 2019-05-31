@@ -5,6 +5,8 @@ public class Learners {
     String lastName;
     String emailAddress;
 
+    int tokenBalance = 0;
+    //todo: create notes map/list
 
     public Learners(String firstName, String lastName,String emailAddress){
          this.firstName = firstName;
@@ -27,4 +29,11 @@ public class Learners {
         return emailAddress;
     }
 
+    public void earnToken(){
+        tokenBalance += 3;
+    }
+
+    public void earnNotes(Subjects subject){
+//        tokenBalance +3;
+    }
 }

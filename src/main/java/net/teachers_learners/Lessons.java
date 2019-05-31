@@ -7,6 +7,7 @@ public class Lessons {
 
     public String name;
     public  String subject;
+    int tokens = 0;
 
     Learners learners;
 
@@ -17,8 +18,12 @@ public class Lessons {
     Map<String,Integer>storeLearners= new HashMap< String, Integer >();
         private int addCounter =1;
 
+    public Lessons( ) {
 
-        public  String addLearners(){
+    }
+
+
+    public  String addLearners(){
             this.name = learners.firstName;
 
             if (!storeLearners.containsKey(name)){
@@ -33,23 +38,66 @@ public class Lessons {
             return addLearners();
         }
 
-        public String howManyLearners(){
+        public String totalLearners(){
             this.name = learners.firstName;
             return String.valueOf((storeLearners.size()));
         }
 
-        String Accept(){
+        String accept(){
 
             if (subject.matches(subject)){
-                System.out.println("learners has been registerd");
+                return "learners has been registerd";
 
             }
             else{
-                System.out.println("learner has been canceled");
+                return "learner has been canceled";
             }
 
-            return Accept();
         }
+       public String startLesson(Teachers teachers){
+
+           if (subject.matches(subject)){
+//          if (storeLearners >= 5){
+               return "teachers has been succesful";
+
+           }
+           else{
+               return "teacher has been cancelled";
+           }
+
+       }
+
+       public String startLessons(String start){
+//            String start;
+
+//        if (start >= 5 ){
+//
+//
+//        }
+           return start;
+       }
+
+
+
+
+
+//
+//        Map<String, Integer>storedSubjects= new HashMap<>();
+//            int token = 0;
+//                public String startLessons(){
+//                    this.subject = learners.firstName;
+//                    if (!storedSubjects.containsKey(subject)){
+//                        storedSubjects.put(subject,token);
+//
+//
+//                    }
+//
+//
+//
+//                 return null;
+//            }
+
+
 
 
 }

@@ -5,10 +5,14 @@ public class Teachers {
     String lastName;
     String emailAddress;
 
-    public Teachers(String teacherName, String lastName, String emailAddress){
+    public Teachers(String teacherName, String lastName, String emailAddress ){
         this.teacherName = teacherName;
         this.lastName =lastName;
         this.emailAddress = emailAddress;
+    }
+
+    public Teachers( ) {
+
     }
 
     String getTeacherName(){
