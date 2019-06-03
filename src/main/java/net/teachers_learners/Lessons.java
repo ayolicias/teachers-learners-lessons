@@ -3,7 +3,7 @@ import javax.security.auth.Subject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Lessons {
+public class Lessons implements Teachers_learners {
 
      String name;
      String lastName;
@@ -41,7 +41,7 @@ public class Lessons {
         return name + "registed";
     }
 
-        public int totalLearners(){
+    public int totalLearners(){
             return storeLearners.size();
         }
 
@@ -69,6 +69,11 @@ public class Lessons {
               learners.earnToken();
           }
       return startLesson();
+    }
+
+    @Override
+    public String askNotes( ) {
+        return null;
     }
 
 }
