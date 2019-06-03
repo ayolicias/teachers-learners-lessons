@@ -1,5 +1,4 @@
 package net.teachers_learners;
-
 import javax.security.auth.Subject;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,11 +8,12 @@ public class Lessons {
      String name;
      String lastName;
      String emailAddress;
+     Subject subject;
+     Learners learners;
+     Integer teachers;
 
     int tokens = 0;;
 
-    Subject subject;
-    Learners learners;
 
     public Lessons( Subject subject){
         this.subject = subject;
@@ -45,23 +45,30 @@ public class Lessons {
             return storeLearners.size();
         }
 
-//        String accept(){
-//
-//            if (subject.matches(subject)){
-//                return "learners has been registerd";
-//
-//            }
-//            else{
-//                return "learner has been canceled";
-//            }
-//
-//        }
     //method check if teacher get subject
-    public String startLesson(Teachers teachers){
-        if (teachers.){
+    public String startTeacher(Teachers teachers){
+        if (addLearners(learners) == "registered" && totalLearners()>=5 ){
+            tokens =+3;
+            storeLearners.get(subject);
+            return name +"successful";
 
         }
+        else{
+            return name + "cancelled";
+        }
     }
+    public String startLesson(){
 
+      if (addLearners(learners) == "registered" && totalLearners()>=5 ){
+          for(int i=0; i<storeLearners.size(); i++){
+
+              teachers+=storeLearners.get(i);
+          }
+//          for (storeLearners.get(learners)){
+              learners.earnNotes();
+              learners.earnToken();
+          }
+      return startLesson();
+    }
 
 }
