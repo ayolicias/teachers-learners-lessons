@@ -1,103 +1,67 @@
 package net.teachers_learners;
 
+import javax.security.auth.Subject;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Lessons {
 
-    public String name;
-    public  String subject;
-    int tokens = 0;
+     String name;
+     String lastName;
+     String emailAddress;
 
+    int tokens = 0;;
+
+    Subject subject;
     Learners learners;
 
-    public Lessons( String subject){
-        Subjects.valueOf(subject).getSubject();
+    public Lessons( Subject subject){
+        this.subject = subject;
     }
 
     Map<String,Integer>storeLearners= new HashMap< String, Integer >();
         private int addCounter =1;
 
-    public Lessons( ) {
+    public  String addLearners(Learners learners) {
+        this.name = learners.firstName;
+        this.lastName = learners.lastName;
+        this.emailAddress = learners.emailAddress;
 
+        if (learners.earnNotes().length() >= 3 && learners.attended(subject)){
+
+            if (!storeLearners.containsKey(name)) {
+                storeLearners.put(name, addCounter);
+
+            } else {
+                int addCounter = storeLearners.get(name);
+                addCounter++;
+                storeLearners.put(name, addCounter);
+            }
+        }
+        return name + "registed";
     }
 
-
-    public  String addLearners(){
-            this.name = learners.firstName;
-
-            if (!storeLearners.containsKey(name)){
-                storeLearners.put(name,addCounter);
-            }
-
-            else{
-                int addCounter= storeLearners.get(name);
-                addCounter ++;
-                storeLearners.put(name,addCounter);
-            }
-            return addLearners();
+        public int totalLearners(){
+            return storeLearners.size();
         }
 
-        public String totalLearners(){
-            this.name = learners.firstName;
-            return String.valueOf((storeLearners.size()));
-        }
-
-        String accept(){
-
-            if (subject.matches(subject)){
-                return "learners has been registerd";
-
-            }
-            else{
-                return "learner has been canceled";
-            }
-
-        }
-       public String startLesson(Teachers teachers){
-
-           if (subject.matches(subject)){
-//          if (storeLearners >= 5){
-               return "teachers has been succesful";
-
-           }
-           else{
-               return "teacher has been cancelled";
-           }
-
-       }
-
-       public String startLessons(String start){
-//            String start;
-
-//        if (start >= 5 ){
+//        String accept(){
 //
+//            if (subject.matches(subject)){
+//                return "learners has been registerd";
+//
+//            }
+//            else{
+//                return "learner has been canceled";
+//            }
 //
 //        }
-           return start;
-       }
+    //method check if teacher get subject
+    public String startLesson(Teachers teachers){
+        if (teachers.){
 
-
-
-
-
-//
-//        Map<String, Integer>storedSubjects= new HashMap<>();
-//            int token = 0;
-//                public String startLessons(){
-//                    this.subject = learners.firstName;
-//                    if (!storedSubjects.containsKey(subject)){
-//                        storedSubjects.put(subject,token);
-//
-//
-//                    }
-//
-//
-//
-//                 return null;
-//            }
-
-
+        }
+    }
 
 
 }
